@@ -1,21 +1,32 @@
 const LS_KEY = 'saveContacts';
 
 const addToLoacalStorage = contacts => {
-  localStorage.setItem(LS_KEY, JSON.stringify(contacts));
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify(contacts));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const getFromLocalStoreage = () => {
-  const contacts = localStorage.getItem(LS_KEY);
-
-  if (contacts) {
-    return JSON.parse(contacts);
-  } else {
-    return [];
+  try {
+    const contacts = localStorage.getItem(LS_KEY);
+    if (contacts) {
+      return JSON.parse(contacts);
+    } else {
+      return [];
+    }
+  } catch (error) {
+    console.log(error);
   }
 };
 
 const removeFromLocalStorage = contacts => {
-  localStorage.setItem(LS_KEY, JSON.stringify(contacts));
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify(contacts));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export { addToLoacalStorage, getFromLocalStoreage, removeFromLocalStorage };
