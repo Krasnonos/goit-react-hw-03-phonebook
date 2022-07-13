@@ -5,7 +5,7 @@ import { Title, Box, ContactsBox } from './ContactList.styled';
 export const ContactList = ({ contactsInfo, delateContact }) => {
   return (
     <Box>
-      <Title>Title</Title>
+      <Title>Contacts</Title>
       <ContactsBox>
         {contactsInfo.map(item => (
           <ContactListItem
